@@ -1,14 +1,16 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, ScrollView, FlatList } from "react-native";
+import TaskCard from "./TaskCard";
 
 const TaskList = (props) => {
-  console.log(props);
   return (
-    <View>
-      {props.tasks.map((task) => {
-        return <Text key={task.id}>{task.text}</Text>;
-      })}
-    </View>
+    <FlatList
+      data={props.tasks}
+      keyExtractor={(item) => item.id}
+      renderItem={(item) => {
+        return <TaskCard task={item.item} />;
+      }}
+    />
   );
 };
 

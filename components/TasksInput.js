@@ -17,6 +17,7 @@ const TasksInput = (props) => {
       <View style={Styles.inputContainer}>
         <TextInput
           value={task}
+          onSubmitEditing={buttonClicked}
           onChangeText={(e) => {
             settask(e);
           }}
@@ -30,7 +31,11 @@ const TasksInput = (props) => {
 };
 
 const Styles = StyleSheet.create({
-  box: { borderBottomWidth: 2, paddingBottom: 15 },
+  box: {
+    borderBottomWidth: 5,
+    paddingBottom: 15,
+    borderBottomColor: "#80bd01",
+  },
   container: {
     alignContent: "center",
   },
