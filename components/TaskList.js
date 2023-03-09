@@ -8,7 +8,9 @@ const TaskList = (props) => {
       data={props.tasks}
       keyExtractor={(item) => item.id}
       renderItem={(item) => {
-        return <TaskCard task={item.item} />;
+        return (
+          <TaskCard onCardPressed={props.onCardPressed} task={item.item} />
+        );
       }}
     />
   );

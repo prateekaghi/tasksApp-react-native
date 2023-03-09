@@ -6,6 +6,7 @@ import { StyleSheet, View, Text, TextInput } from "react-native";
 const TasksInput = (props) => {
   const [task, settask] = useState("");
   const buttonClicked = () => {
+    console.log(task.trim(""));
     props.onTaskClicked(task);
     settask("");
   };
