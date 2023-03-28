@@ -26,10 +26,10 @@ const TasksInput = (props) => {
         />
         <View style={Styles.buttonContainer}>
           <View style={Styles.button}>
-            <Button onPress={buttonClicked} title="Add Task" />
+            <Button color={"red"} onPress={props.onCancel} title="Cancel" />
           </View>
           <View style={Styles.button}>
-            <Button color={"red"} onPress={props.onCancel} title="Cancel" />
+            <Button onPress={buttonClicked} title="Add Task" />
           </View>
         </View>
       </View>
@@ -45,8 +45,10 @@ const Styles = StyleSheet.create({
   },
   container: {
     alignContent: "center",
+    paddingTop: 20,
   },
   buttonContainer: { flexDirection: "row", justifyContent: "center" },
+
   inputContainer: {
     flexDirection: "column",
   },
@@ -60,6 +62,7 @@ const Styles = StyleSheet.create({
     borderWidth: 2,
     padding: 2,
     margin: 2,
+    height: 40,
   },
   button: {
     width: 100,

@@ -1,7 +1,8 @@
-import { Text, Button, Modal, StyleSheet, View } from "react-native";
+import { Image, Button, Modal, StyleSheet, View } from "react-native";
 import { useState } from "react";
 import TasksInput from "./components/TasksInput";
 import TaskList from "./components/TaskList";
+import { StatusBar } from "expo-status-bar";
 
 export default function App() {
   const [tasks, setTasks] = useState([]);
@@ -28,6 +29,17 @@ export default function App() {
   };
   return (
     <View style={styles.AppContainer}>
+      <StatusBar
+        style="dark"
+        networkActivityIndicatorVisible="false"
+        animated="true"
+      />
+      <Image
+        resizeMethod="auto"
+        resizeMode="contain"
+        style={styles.image}
+        source={require("./assets/images/logocopy.jpg")}
+      />
       <Button
         title="Click to Add Tasks"
         color={"#80bd01"}
@@ -59,5 +71,11 @@ const styles = StyleSheet.create({
 
   ModalContainer: {
     paddingTop: 50,
+  },
+  image: {
+    height: 200,
+    width: 200,
+    marginHorizontal: 100,
+    marginBottom: 0,
   },
 });
